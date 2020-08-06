@@ -5,6 +5,8 @@ class User < ApplicationRecord
 
   # Validations
 
+  validates :username, :uniqueness => { :case_sensitive => true }
+
   validates :username, :presence => true
 
   validates :username, :length => { :minimum => 6, :maximum => 20 }
