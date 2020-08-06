@@ -3,7 +3,8 @@ class BlogsController < ApplicationController
 
   # GET /blogs
   def index
-    @blogs = Blog.page(params[:page]).per(10)
+    @q = Blog.ransack(params[:q])
+    @blogs = @q.result(:distinct => true).includes(:user).page(params[:page]).per(10)
   end
 
   # GET /blogs/1
