@@ -6,21 +6,15 @@
   <div class="card-body">
     <dl class="mb-1">
       <dt>Content</dt>
-      <!-- Display content start -->
       <dd><%= blog.content %></dd>
-      <!-- Display content end -->
 
       <dt>Image</dt>
-      <!-- Display image start -->
       <dd>
         <%= cl_image_tag @blog.image, class: "img-fluid" %>
       </dd>
-      <!-- Display image end -->
 
       <dt>User</dt>
-      <!-- Display user_id start -->
       <dd><%= blog.user_id %></dd>
-      <!-- Display user_id end -->
 
     </dl>
 
@@ -29,21 +23,17 @@
         <%= link_to_show_or_back blog, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
       </div>
 
-      <!-- Edit link blog start -->
       <div class="col">
         <%= link_to edit_blog_url(blog), class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-edit"></i>
         <% end %>
       </div>
-      <!-- Edit link blog end -->
 
-      <!-- Delete link blog start -->
       <div class="col">
         <%= link_to blog, method: :delete, data: { confirm: "Do you really want to delete this blog?" }, class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-trash-alt"></i>
         <% end %>
       </div>
-      <!-- Delete link blog end -->
     </div>
   </div>
 

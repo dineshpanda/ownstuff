@@ -1,7 +1,6 @@
 <% was_validated = blog.errors.any? %>
 
 <%= form_with(model: blog, local: true, novalidate: true, class: "mb-3") do |f| %>
-  <!-- Label and input for content start -->
   <div class="form-group">
     <% content_class = "form-control" %>
     <% content_was_invalid = blog.errors.include?(:content) %>
@@ -15,9 +14,7 @@
     <% end %>
 
     <%= f.label :content %>
-    <!-- Input for content start -->
     <%= f.text_area :content, class: content_class, placeholder: "Enter content" %>
-    <!-- Input for content end -->
     <% if content_was_invalid %>
       <% blog.errors.full_messages_for(:content).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -26,8 +23,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for content end -->
-  <!-- Label and input for image start -->
   <div class="form-group">
     <% image_class = "form-control" %>
     <% image_was_invalid = blog.errors.include?(:image) %>
@@ -41,9 +36,7 @@
     <% end %>
 
     <%= f.label :image %>
-    <!-- Input for image start -->
     <%= f.file_field :image, class: "form-control" %>
-    <!-- Input for image end -->
     <% if image_was_invalid %>
       <% blog.errors.full_messages_for(:image).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -52,8 +45,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for image end -->
-  <!-- Label and input for user_id start -->
   <div class="form-group">
     <% user_id_class = "form-control" %>
     <% user_id_was_invalid = blog.errors.include?(:user_id) %>
@@ -67,9 +58,7 @@
     <% end %>
 
     <%= f.label :user_id %>
-    <!-- Input for user_id start -->
     <%= f.select :user_id, options_from_collection_for_select(User.all, :id, :username, @blog.user_id), {}, class: "form-control" %>
-    <!-- Input for user_id end -->
     <% if user_id_was_invalid %>
       <% blog.errors.full_messages_for(:user_id).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -78,6 +67,5 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for user_id end -->
   <%= f.button class: "btn btn-outline-secondary btn-block" %>
 <% end %>
