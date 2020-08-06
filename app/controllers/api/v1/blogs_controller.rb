@@ -13,7 +13,7 @@ class Api::V1::BlogsController < Api::V1::GraphitiController
     blog = BlogResource.build(params)
 
     if blog.save
-      render jsonapi: blog, status: 201
+      render jsonapi: blog, status: :created
     else
       render jsonapi_errors: blog
     end
@@ -33,7 +33,7 @@ class Api::V1::BlogsController < Api::V1::GraphitiController
     blog = BlogResource.find(params)
 
     if blog.destroy
-      render jsonapi: { meta: {} }, status: 200
+      render jsonapi: { meta: {} }, status: :ok
     else
       render jsonapi_errors: blog
     end
