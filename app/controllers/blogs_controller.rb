@@ -42,8 +42,14 @@ class BlogsController < ApplicationController
   # DELETE /blogs/1
   def destroy
     @blog.destroy
-    redirect_to blogs_url, notice: 'Blog was successfully destroyed.'
+    message = "Blog was successfully deleted."
+    if Rails.application.routes.recognize_path(request.referrer)[:controller] != Rails.application.routes.recognize_path(request.path)[:controller]
+      redirect_back fallback_location: request.referrer, notice: message
+    else
+      redirect_to blogs_url, notice: message
+    end
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
