@@ -49,3 +49,16 @@ gem 'web_git', github: 'firstdraft/web_git'
 gem 'activeadmin', '2.2.0'
 gem 'carrierwave'
 gem 'cloudinary'
+gem 'graphiti', '~> 1.2'
+gem 'graphiti-rails', github: 'firstdraft/graphiti-rails', branch: 'develop'
+gem 'vandal_ui', '~> 0.4'
+
+group :development, :test do
+  gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'graphiti_spec_helpers'
+end
+
+group :test do
+  gem 'database_cleaner'
+end
