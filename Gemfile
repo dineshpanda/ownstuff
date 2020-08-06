@@ -50,7 +50,7 @@ gem "cloudinary"
 gem "coffee-rails"
 gem "graphiti", "~> 1.2"
 gem "graphiti-rails", github: "firstdraft/graphiti-rails", branch: "develop"
-gem "ideas_generators", github: "firstdraft/ideas_generators"
+gem "ideas_generators", path: "/Users/dineshpanda/LiveProjects/firstdraft/ideas_generators"
 gem "rspec-rails"
 gem "rubocop-rails", "2.5.2", require: false
 gem "shoulda-matchers"

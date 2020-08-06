@@ -9,13 +9,6 @@ GIT
       rescue_registry (~> 0.2.1)
 
 GIT
-  remote: https://github.com/firstdraft/ideas_generators.git
-  revision: b3c2ec25f8044de536a0f0794943d47c23eeee0e
-  specs:
-    ideas_generators (0.1.0)
-      railties
-
-GIT
   remote: https://github.com/firstdraft/seed_dump.git
   revision: 08707d80fa0d9776b2118fbdabd66f9548181e0a
   specs:
@@ -36,6 +29,12 @@ GIT
       turbolinks (~> 5)
       tzinfo-data
       yard (>= 0.9.20)
+
+PATH
+  remote: /Users/dineshpanda/LiveProjects/firstdraft/ideas_generators
+  specs:
+    ideas_generators (0.1.0)
+      railties
 
 GEM
   remote: https://rubygems.org/

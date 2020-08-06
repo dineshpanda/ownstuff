@@ -58,7 +58,7 @@
     <% end %>
 
     <%= f.label :user_id %>
-    <%= f.select :user_id, options_from_collection_for_select(User.all, :id, :username, @blog.user_id), {}, class: "form-control" %>
+    <%= f.select :user_id, options_from_collection_for_select(User.all, :id, :to_s, @blog.user_id), {}, class: "form-control" %>
     <% if user_id_was_invalid %>
       <% blog.errors.full_messages_for(:user_id).each do |message| %>
         <div class="invalid-feedback d-flex">
