@@ -5,6 +5,8 @@ class User < ApplicationRecord
 
   # Validations
 
+  validates :username, :length => { :minimum => 6, :maximum => 20 }
+
   # Scopes
   def to_s
     username
