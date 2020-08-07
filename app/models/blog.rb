@@ -11,6 +11,7 @@ class Blog < ApplicationRecord
   # Validations
 
   # Scopes
+
   def to_s
     user.to_s
   end
